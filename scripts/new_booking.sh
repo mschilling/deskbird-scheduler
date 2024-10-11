@@ -15,9 +15,8 @@ next_start_time() {
     # Date = current date + 6 days
     # Time = 07:00 (in the morning)
     # Get the timestamp in milliseconds
-    
-
-    local start_time=$(date -d "+6 days 07:00" +%s%3N)
+    local start_time=$(TZ=$(date +%Z) date -d "+6 days 07:00" +%s%3N)
+    # local start_time=$(date -d "+6 days 07:00" +%s%3N)
     echo $start_time
 }
 next_end_time() {
