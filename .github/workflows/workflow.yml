@@ -10,5 +10,5 @@ jobs:
   simple-task:
     runs-on: ubuntu-latest
     steps:
-      - name: Run echo command
-        run: echo 1
+      - name: Create new booking
+        run: ./scripts/new_booking.sh
