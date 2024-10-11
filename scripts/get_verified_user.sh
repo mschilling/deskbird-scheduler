@@ -25,7 +25,7 @@
             fi
         fi
 
-        # echo "$response" | jq '.'
+        echo "$response" | jq '.'
     }
 
     refresh_access_token() {
