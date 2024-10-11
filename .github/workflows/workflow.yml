@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Create new booking
         env:
-          DESKBIRD_ACCESS_TOKEN: ${{ secrets.DESKBIRD_ACCESS_TOKEN }}
+          REFRESH_TOKEN: ${{ secrets.DESKBIRD_REFRESH_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GOOGLE_API_URL: ${{ secrets.GOOGLE_API_URL }}
         run: ./scripts/new_booking.sh
