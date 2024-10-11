@@ -15,6 +15,4 @@ jobs:
       - name: Create new booking
         env:
           REFRESH_TOKEN: ${{ secrets.DESKBIRD_REFRESH_TOKEN }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          GOOGLE_API_URL: ${{ secrets.GOOGLE_API_URL }}
         run: ./scripts/new_booking.sh
