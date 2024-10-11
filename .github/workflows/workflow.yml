@@ -3,7 +3,6 @@ name: Basic Workflow
 on:
   workflow_dispatch:
   pull_request:
-    types: [opened, synchronize, reopened]
   schedule:
     - cron: '0 0 * * *'  # Runs at the end of every day (midnight UTC)
 
