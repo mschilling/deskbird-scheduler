@@ -14,14 +14,14 @@ next_start_time() {
     # Date = current date + 6 days
     # Time = 07:00 (in the morning)
     # Get the timestamp in milliseconds
-    local start_time=$(date -v+6d -v7H -v0M -v0S +%s000)
+    local start_time=$(date -d "+6 days 07:00" +%s000)
     echo $start_time
 }
 next_end_time() {
     # Get the current time in milliseconds
     # date = Today + 6 days
     # time = 18:00
-    local end_time=$(date -v+6d -v18H -v0M -v0S +%s000)
+    local end_time=$(date -d "+6 days 18:00" +%s000)
     echo $end_time
 }
 
