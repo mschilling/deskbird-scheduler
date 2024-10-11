@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Load configuration
-# source "./script.config"
+source ./scripts/get_verified_user.sh
+
 API_BASE_URL="https://api.deskbird.com/v1.1"
 
 # Constants
@@ -42,8 +43,6 @@ create_booking() {
 
 # Main function
 run() {
-
-    source ./scripts/get_verified_user.sh
 
     local access_token=$DESKBIRD_ACCESS_TOKEN
 
