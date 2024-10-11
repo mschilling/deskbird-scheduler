@@ -1,7 +1,8 @@
 #!/bin/bash
 
 DESKBIRD_API_URL=https://api.deskbird.com
-
+GOOGLE_API_KEY=AIzaSyCJG2vthfqCzIEfbY343MABk46DAuvncRQ
+GOOGLE_API_URL=https://securetoken.googleapis.com/v1/token?key=
 # Configuration
 
 API_URL=$GOOGLE_API_URL$GOOGLE_API_KEY
