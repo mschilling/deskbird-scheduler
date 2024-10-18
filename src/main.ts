@@ -60,6 +60,9 @@ async function run() {
     }
   } catch (error) {
     console.error("Failed to run the booking process:", error);
+
+    // exit process with code 1
+    process.exit(1);
   }
 }
 
