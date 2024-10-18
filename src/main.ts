@@ -31,8 +31,8 @@ async function run() {
   const data = {
     bookings: [
       {
-        bookingStartTime: startTime, //nextStartTime(),
-        bookingEndTime: endTime, //nextEndTime(),
+        bookingStartTime: startTime,
+        bookingEndTime: endTime,
         isAnonymous: false,
         resourceId: "70645",
         zoneItemId: myDesk,
