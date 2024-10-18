@@ -27,23 +27,14 @@ async function run() {
   console.log(bookingDate);
 
   const myDesk = DESK_58;
-  const startDateTime = setHours(bookingDate, 7);
-  const endDateTime = setHours(bookingDate, 18);
-
-  console.log({
-    startDateTime,
-    endDateTime,
-  });
-
-//   if (bookingDate) {
-//     return;
-//   }
+  const startDateTime = bookingDate.set({ hour: 9 });
+  const endDateTime = bookingDate.set({ hour: 18 });
 
   const data = {
     bookings: [
       {
-        bookingStartTime: startDateTime.getTime(),
-        bookingEndTime: endDateTime.getTime(),
+        bookingStartTime: startDateTime.toMillis(),
+        bookingEndTime: endDateTime.toMillis(),
         isAnonymous: false,
         resourceId: "70645",
         zoneItemId: myDesk,
@@ -51,6 +42,16 @@ async function run() {
       },
     ],
   };
+
+  console.log({
+    startDateTime,
+    endDateTime,
+  });
+  console.log(data);
+
+  //   if (bookingDate) {
+  //     return;
+  //   }
 
   try {
     const response = await createBooking(data, accessToken);

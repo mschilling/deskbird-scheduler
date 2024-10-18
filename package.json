@@ -20,7 +20,9 @@
   },
   "dependencies": {
     "@date-fns/tz": "^1.1.2",
+    "@types/luxon": "^3.4.2",
     "date-fns": "^4.1.0",
-    "dotenv-flow": "^4.1.0"
+    "dotenv-flow": "^4.1.0",
+    "luxon": "^3.5.0"
   }
 }
