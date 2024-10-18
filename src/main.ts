@@ -48,6 +48,9 @@ async function run() {
 
     console.log(`SuccessfulBookings: ${successfulBookings}`);
     console.log(`FailedBookings: ${failedBookings}`);
+    if(failedBookings > 0) {
+      console.dir(response.failedBookings, { depth: null });
+    }
   } catch (error) {
     console.error("Failed to run the booking process:", error);
   }

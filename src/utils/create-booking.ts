@@ -30,7 +30,6 @@ export async function createBooking(data: BookingData, accessToken: string): Pro
 
     const responseData = await response.json();
     return responseData;
-    // return response.data;
   } catch (error) {
     console.error("Error creating booking:", error);
     throw error;
