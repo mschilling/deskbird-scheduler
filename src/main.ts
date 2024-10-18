@@ -5,7 +5,7 @@ import { DESK_56, DESK_58 } from "./constants";
 import { createBooking } from "./utils/create-booking";
 import { getNewAccessToken } from "./utils/get-new-access-token";
 import { getNextBookingDate } from "./utils/date/get-next-booking-date";
-import { setHours } from "date-fns";
+import { setHours, addMinutes } from "date-fns";
 
 // Main function
 async function run() {
@@ -27,12 +27,12 @@ async function run() {
   console.log(bookingDate);
 
   const myDesk = DESK_58;
-  const startTime = setHours(bookingDate, 7).setMinutes(0, 0, 0);
-  const endTime = setHours(bookingDate, 18).setMinutes(0, 0, 0);
+  const startDateTime = setHours(bookingDate, 7);
+  const endDateTime = setHours(bookingDate, 18);
 
   console.log({
-    startTime,
-    endTime,
+    startDateTime,
+    endDateTime,
   });
 
   if (bookingDate) {
@@ -42,8 +42,8 @@ async function run() {
   const data = {
     bookings: [
       {
-        bookingStartTime: startTime,
-        bookingEndTime: endTime,
+        bookingStartTime: startDateTime.getTime(),
+        bookingEndTime: endDateTime.getTime(),
         isAnonymous: false,
         resourceId: "70645",
         zoneItemId: myDesk,
