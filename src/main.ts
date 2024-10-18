@@ -1,11 +1,10 @@
 import * as dotenvFlow from "dotenv-flow";
 dotenvFlow.config();
 
-import { DESK_56, DESK_58 } from "./constants";
+import { DESK_58 } from "./constants";
 import { createBooking } from "./utils/create-booking";
-import { getNewAccessToken } from "./utils/get-new-access-token";
 import { getNextBookingDate } from "./utils/date/get-next-booking-date";
-import { setHours, addMinutes } from "date-fns";
+import { getNewAccessToken } from "./utils/get-new-access-token";
 
 // Main function
 async function run() {
@@ -24,7 +23,10 @@ async function run() {
 
   const bookingDate = getNextBookingDate(6);
 
-  console.log(bookingDate);
+  if (bookingDate.weekday === 6 || bookingDate.weekday === 7) {
+    console.log("Booking is on weekend, skipping...");
+    return;
+  }
 
   const myDesk = DESK_58;
   const startDateTime = bookingDate.set({ hour: 9 });
@@ -43,16 +45,6 @@ async function run() {
     ],
   };
 
-  console.log({
-    startDateTime,
-    endDateTime,
-  });
-  console.log(data);
-
-    if (bookingDate) {
-      return;
-    }
-
   try {
     const response = await createBooking(data, accessToken);
     const successfulBookings = response.successfulBookings.length;
@@ -63,6 +55,9 @@ async function run() {
     if (failedBookings > 0) {
       console.dir(response.failedBookings, { depth: null });
     }
+    // exit process
+    process.exit(-1);
+    return;
   } catch (error) {
     console.error("Failed to run the booking process:", error);
   }
