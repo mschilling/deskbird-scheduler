@@ -9,7 +9,7 @@ import { getNextBookingDate } from "./utils/date/get-next-booking-date";
 
 // Main function
 async function run() {
-  const refreshToken = process.env.DESKBIRD_REFRESH_TOKEN;
+  const refreshToken = process.env.REFRESH_TOKEN;
 
   if (!refreshToken) {
     console.error("DESKBIRD_ACCESS_TOKEN is not set");
