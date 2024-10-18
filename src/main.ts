@@ -24,6 +24,8 @@ async function run() {
 
   const bookingDate = getNextBookingDate(6);
 
+  console.log(bookingDate)
+
   const myDesk  = DESK_58;
   const startTime = new Date(bookingDate).setHours(7, 0, 0, 0);
   const endTime = new Date(bookingDate).setHours(18, 0, 0, 0);
