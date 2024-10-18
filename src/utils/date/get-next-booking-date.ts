@@ -1,4 +1,3 @@
-import { addDays, startOfHour } from "date-fns";
 import { DateTime } from "luxon";
 
 export function getNextBookingDate(daysFromNow: number = 6): DateTime {

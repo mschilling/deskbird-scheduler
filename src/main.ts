@@ -49,9 +49,9 @@ async function run() {
   });
   console.log(data);
 
-  //   if (bookingDate) {
-  //     return;
-  //   }
+    if (bookingDate) {
+      return;
+    }
 
   try {
     const response = await createBooking(data, accessToken);
