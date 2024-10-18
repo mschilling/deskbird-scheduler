@@ -54,9 +54,10 @@ async function run() {
     console.log(`FailedBookings: ${failedBookings}`);
     if (failedBookings > 0) {
       console.dir(response.failedBookings, { depth: null });
+
+      // exit process with code 1
+      process.exit(1);
     }
-    // exit process with code 1
-    process.exit(1);
   } catch (error) {
     console.error("Failed to run the booking process:", error);
   }
