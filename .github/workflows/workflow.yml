@@ -19,6 +19,11 @@ jobs:
         with:
           node-version: 22
 
+      - name: Install node modules
+        run: npm ci
+        env:
+            CI: true          
+            
       - name: Create new booking
         env:
           REFRESH_TOKEN: ${{ secrets.DESKBIRD_REFRESH_TOKEN }}
