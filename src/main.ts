@@ -35,9 +35,9 @@ async function run() {
     endDateTime,
   });
 
-  if (bookingDate) {
-    return;
-  }
+//   if (bookingDate) {
+//     return;
+//   }
 
   const data = {
     bookings: [
