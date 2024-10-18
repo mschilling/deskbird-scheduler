@@ -5,6 +5,7 @@ import { DESK_56, DESK_58 } from "./constants";
 import { createBooking } from "./utils/create-booking";
 import { getNewAccessToken } from "./utils/get-new-access-token";
 import { getNextBookingDate } from "./utils/date/get-next-booking-date";
+import { setHours } from "date-fns";
 
 // Main function
 async function run() {
@@ -26,10 +27,17 @@ async function run() {
   console.log(bookingDate);
 
   const myDesk = DESK_58;
-  const startTime = new Date(bookingDate).setHours(7, 0, 0, 0);
-  const endTime = new Date(bookingDate).setHours(18, 0, 0, 0);
+  const startTime = setHours(bookingDate, 7).setMinutes(0, 0, 0);
+  const endTime = setHours(bookingDate, 18).setMinutes(0, 0, 0);
 
-  console.log(startTime);
+  console.log({
+    startTime,
+    endTime,
+  });
+
+  if (bookingDate) {
+    return;
+  }
 
   const data = {
     bookings: [
