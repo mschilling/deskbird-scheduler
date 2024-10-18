@@ -6,7 +6,6 @@ import { createBooking } from "./utils/create-booking";
 import { getNewAccessToken } from "./utils/get-new-access-token";
 import { getNextBookingDate } from "./utils/date/get-next-booking-date";
 
-
 // Main function
 async function run() {
   const refreshToken = process.env.REFRESH_TOKEN;
@@ -24,11 +23,13 @@ async function run() {
 
   const bookingDate = getNextBookingDate(6);
 
-  console.log(bookingDate)
+  console.log(bookingDate);
 
-  const myDesk  = DESK_58;
+  const myDesk = DESK_58;
   const startTime = new Date(bookingDate).setHours(7, 0, 0, 0);
   const endTime = new Date(bookingDate).setHours(18, 0, 0, 0);
+
+  console.log(startTime);
 
   const data = {
     bookings: [
@@ -50,7 +51,7 @@ async function run() {
 
     console.log(`SuccessfulBookings: ${successfulBookings}`);
     console.log(`FailedBookings: ${failedBookings}`);
-    if(failedBookings > 0) {
+    if (failedBookings > 0) {
       console.dir(response.failedBookings, { depth: null });
     }
   } catch (error) {
