@@ -23,6 +23,7 @@
 3. Create a `.env` file in the root directory and add your Deskbird refresh token:
    ```sh
    REFRESH_TOKEN=your_deskbird_refresh_token
+   GOOGLE_API_KEY=your_google_api_key
    ```
 
 ### Running the Bot
@@ -52,3 +53,7 @@ npm run start
 - Make sure your code follows the coding standards.
 - Test your changes thoroughly.
 - Submit a pull request with a clear description of your changes.
+
+## License
+
+This project is licensed under the ISC License. See the [LICENSE](LICENSE) file for details.

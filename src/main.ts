@@ -9,9 +9,16 @@ import { getNewAccessToken } from "./utils/get-new-access-token";
 // Main function
 async function run() {
   const refreshToken = process.env.REFRESH_TOKEN;
+  const googleApiKey = process.env.GOOGLE_API_KEY;
+  const googleApiUrl = process.env.GOOGLE_API_URL;
 
   if (!refreshToken) {
     console.error("DESKBIRD_ACCESS_TOKEN is not set");
+    return;
+  }
+
+  if (!googleApiKey || !googleApiUrl) {
+    console.error("Google API key or URL is not set");
     return;
   }
 
