@@ -1,6 +1,6 @@
 import { GOOGLE_API_KEY, GOOGLE_API_URL } from '../constants';
 
-const API_URL = `${GOOGLE_API_URL}${GOOGLE_API_KEY}`;
+const API_URL = `${GOOGLE_API_URL}?key=${GOOGLE_API_KEY}`;
 
 export async function getNewAccessToken(
   refreshToken: string

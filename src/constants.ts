@@ -1,6 +1,6 @@
 export const API_BASE_URL = 'https://api.deskbird.com/v1.1';
 
-export const GOOGLE_API_URL = 'https://www.googleapis.com/oauth2/v4/token';
+export const GOOGLE_API_URL = 'https://securetoken.googleapis.com/v1/token';
 export const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
 
 export const DESKBIRD_RESOURCE_ID = process.env.DESKBIRD_RESOURCE_ID;
