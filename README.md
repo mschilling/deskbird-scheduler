@@ -1,4 +1,14 @@
-# deskbird-scheduler
+# 🏢 Deskbird Scheduler - Automated Office Desk Booking
+
+Automatically book your office desk 6 days in advance using Deskbird's API. Never miss your preferred desk again with this smart scheduling tool that handles authentication, timezone calculations, and booking management.
+
+## ✨ Features
+
+- **Automated Scheduling**: Books desks 6 days in advance (9 AM - 6 PM)
+- **Smart Date Handling**: Skips weekends and handles timezone (Europe/Amsterdam)  
+- **Firebase Authentication**: Secure token refresh management
+- **Error Handling**: Robust error handling for reliable automation
+- **Cron-Ready**: Designed for scheduled execution via cron jobs
 
 ## Getting Started
 
@@ -33,12 +43,17 @@
 
    ```
 
-### Running the Bot
+### Usage
 
-To run the bot, use the following command:
-
+Run the scheduler manually:
 ```sh
 npm run start
+```
+
+Or set up automated scheduling with cron:
+```sh
+# Run every day at 8 AM to book 6 days ahead
+0 8 * * * cd /path/to/deskbird-scheduler && npm run start
 ```
 
 ## Contribution Guidelines
