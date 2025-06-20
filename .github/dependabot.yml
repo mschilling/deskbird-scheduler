@@ -4,7 +4,56 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Europe/Amsterdam"
+    # Limit the number of open pull requests for npm
+    open-pull-requests-limit: 5
+    # Add reviewers for npm updates
+    reviewers:
+      - "mschilling"
+    # Add labels to categorize updates
+    labels:
+      - "dependencies"
+      - "npm"
+    # Group minor and patch updates together to reduce PR noise
+    groups:
+      minor-and-patch:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+      # Keep major updates separate for careful review
+      major-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "major"
+    # Automatically merge patch updates for production dependencies
+    # Remove this if you prefer manual review for all updates
+    # auto-merge:
+    #   - match:
+    #       update-type: "security"
+    
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Europe/Amsterdam"
+    # Limit the number of open pull requests for GitHub Actions
+    open-pull-requests-limit: 2
+    # Add reviewers for GitHub Actions updates
+    reviewers:
+      - "mschilling"
+    # Add labels to categorize updates
+    labels:
+      - "dependencies"
+      - "github-actions"
+    # Group all GitHub Actions updates together
+    groups:
+      github-actions:
+        patterns:
+          - "*"
