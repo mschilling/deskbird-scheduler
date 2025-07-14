@@ -15,14 +15,14 @@
     "node": "22"
   },
   "devDependencies": {
-    "@types/node": "^24.0.3",
+    "@types/node": "^24.0.13",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
-    "prettier": "^3.5.3"
+    "prettier": "^3.6.2"
   },
   "dependencies": {
     "@types/luxon": "^3.6.2",
     "dotenv-flow": "^4.1.0",
-    "luxon": "^3.6.1"
+    "luxon": "^3.7.1"
   }
 }
