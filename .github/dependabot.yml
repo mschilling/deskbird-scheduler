@@ -36,7 +36,6 @@ updates:
     allow:
       - dependency-type: "direct"
       - dependency-type: "indirect"
-        update-types: ["security"]
     
   - package-ecosystem: "github-actions"
     directory: "/"
