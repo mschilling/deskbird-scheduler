@@ -13,11 +13,11 @@ updates:
     labels:
       - "dependencies"
     # Cooldown configuration to reduce noise (2025 feature)
-    # Wait 3 days after a new version is released before creating PR
+    # Wait X days after a new version is released before creating PR
     cooldown:
-      patch: 3
-      minor: 3
-      major: 7
+      semver-patch-days: 3
+      semver-minor-days: 3
+      semver-major-days: 7
     # Group minor and patch updates together to reduce PR noise
     groups:
       minor-and-patch:
@@ -53,9 +53,9 @@ updates:
       - "github-actions"
     # Cooldown for GitHub Actions (less conservative than npm)
     cooldown:
-      patch: 1
-      minor: 1
-      major: 3
+      semver-patch-days: 1
+      semver-minor-days: 1
+      semver-major-days: 3
     # Group all GitHub Actions updates together
     groups:
       github-actions:
