@@ -1,0 +1,7 @@
+# Global code owner for all files
+* @mschilling
+
+# Specific patterns for dependency updates
+package.json @mschilling
+package-lock.json @mschilling
+.github/ @mschilling
