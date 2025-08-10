@@ -9,13 +9,15 @@ updates:
       timezone: "Europe/Amsterdam"
     # Limit the number of open pull requests for npm
     open-pull-requests-limit: 5
-    # Add reviewers for npm updates
-    reviewers:
-      - "mschilling"
-    # Add labels to categorize updates
+    # Add labels to categorize updates (removed invalid "npm" label)
     labels:
       - "dependencies"
-      - "npm"
+    # Cooldown configuration to reduce noise (2025 feature)
+    # Wait 3 days after a new version is released before creating PR
+    cooldown:
+      patch: 3
+      minor: 3
+      major: 7
     # Group minor and patch updates together to reduce PR noise
     groups:
       minor-and-patch:
@@ -30,11 +32,11 @@ updates:
           - "*"
         update-types:
           - "major"
-    # Automatically merge patch updates for production dependencies
-    # Remove this if you prefer manual review for all updates
-    # auto-merge:
-    #   - match:
-    #       update-type: "security"
+    # Allow specific dependency types and ignore others for better control
+    allow:
+      - dependency-type: "direct"
+      - dependency-type: "indirect"
+        update-types: ["security"]
     
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -45,13 +47,15 @@ updates:
       timezone: "Europe/Amsterdam"
     # Limit the number of open pull requests for GitHub Actions
     open-pull-requests-limit: 2
-    # Add reviewers for GitHub Actions updates
-    reviewers:
-      - "mschilling"
     # Add labels to categorize updates
     labels:
       - "dependencies"
       - "github-actions"
+    # Cooldown for GitHub Actions (less conservative than npm)
+    cooldown:
+      patch: 1
+      minor: 1
+      major: 3
     # Group all GitHub Actions updates together
     groups:
       github-actions:
