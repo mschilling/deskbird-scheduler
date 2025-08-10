@@ -50,11 +50,6 @@ updates:
     labels:
       - "dependencies"
       - "github-actions"
-    # Cooldown for GitHub Actions (less conservative than npm)
-    cooldown:
-      semver-patch-days: 1
-      semver-minor-days: 1
-      semver-major-days: 3
     # Group all GitHub Actions updates together
     groups:
       github-actions:
