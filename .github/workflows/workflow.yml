@@ -24,7 +24,7 @@ jobs:
 
       - name: Create new booking
         env:
-          REFRESH_TOKEN: ${{ secrets.DESKBIRD_REFRESH_TOKEN }}
+          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           DESKBIRD_RESOURCE_ID: ${{ vars.DESKBIRD_RESOURCE_ID }}
           DESKBIRD_ZONE_ITEM_ID: ${{ vars.DESKBIRD_ZONE_ITEM_ID }}
