@@ -37,6 +37,18 @@ Required environment variables (configured in `.env`):
 - `DESKBIRD_ZONE_ITEM_ID` - Zone identifier
 - `DESKBIRD_WORKSPACE_ID` - Workspace identifier
 
+### GitHub Actions Setup
+For the automated workflow to function, configure these secrets and variables in your GitHub repository:
+
+**Repository Secrets** (Settings → Secrets and variables → Actions):
+- `REFRESH_TOKEN` - Firebase refresh token (same value as local `.env`)
+- `GOOGLE_API_KEY` - Google API key for Firebase (same value as local `.env`)
+
+**Repository Variables** (Settings → Secrets and variables → Actions):
+- `DESKBIRD_RESOURCE_ID` - Specific desk/resource ID
+- `DESKBIRD_ZONE_ITEM_ID` - Zone identifier  
+- `DESKBIRD_WORKSPACE_ID` - Workspace identifier
+
 ### Dependencies
 - **luxon** - Date/time manipulation with timezone support
 - **dotenv-flow** - Environment variable management
